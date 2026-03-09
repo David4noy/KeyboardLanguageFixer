@@ -21,7 +21,7 @@ struct KeyboardConverterView: View {
         let minWidth: CGFloat = 720
         let minHeight: CGFloat = 560
         let copy = "Copy to clipboard"
-        let fieldBackground = Color(NSColor.textBackgroundColor)
+        let fieldBackground = Color.gray.opacity(0.2)
         let cornerThickness: CGFloat = 0
         #endif
 
@@ -40,6 +40,7 @@ struct KeyboardConverterView: View {
                     }
                 }
                 .pickerStyle(.menu)
+                .layoutPriority(1)
                 #if os(iOS) || os(iPadOS)
                 Text("To:")
                 #endif
@@ -49,6 +50,7 @@ struct KeyboardConverterView: View {
                     }
                 }
                 .pickerStyle(.menu)
+                .layoutPriority(1)
             }
 
             // INPUT
